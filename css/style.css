@@ -1,0 +1,287 @@
+/* COLORS */
+/* TYPE */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.26;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* COLORS */
+/* TYPE */
+body {
+  padding: 1.5rem;
+  background-color: black;
+  color: #959eac;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+  border-radius: 15px;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  min-height: 360px;
+  width: 327px;
+}
+
+/* ------- CARD FRONT ------- */
+.card__front {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__hero .card__icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #252d37;
+}
+
+.card__hero .card__title {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.card__hero .card__description {
+  line-height: 1.57;
+}
+
+.card__rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__rating .button-rating {
+  padding: 0;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background-color: #252d37;
+  border: none;
+  color: #7c8798;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card__rating .button-rating:hover {
+  background-color: #7c8798;
+  color: white;
+}
+
+.card__rating .button-rating.selected {
+  background-color: #fb7413;
+  color: white;
+}
+
+.card__submitButton {
+  padding: 12px 0 15px 0;
+  border: none;
+  background-color: #fb7413;
+  border-radius: 30px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card__submitButton:hover {
+  background-color: white;
+  color: #fb7413;
+}
+
+/* ------- CARD BACK ------- */
+.card__back {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.card__image {
+  align-self: center;
+  max-height: 96px;
+}
+
+.card__score {
+  align-self: center;
+  background-color: #252d37;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: #fb7413;
+}
+
+.card__summaryTitle {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.card__summaryDescription {
+  line-height: 1.57;
+}
+
+/* ------- MEDIA START ------- */
+@media (min-width: 480px) {
+  .card {
+    width: 412px;
+    border-radius: 30px;
+    padding: 2rem;
+    min-height: 416px;
+    font-size: 0.938rem;
+  }
+  /* ------- CARD FRONT ------- */
+  .card__hero {
+    gap: 0;
+  }
+  .card__hero .card__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .card__hero .card__title {
+    font-size: 1.75rem;
+    margin: 30px 0 15px 0;
+  }
+  .card__rating .button-rating {
+    width: 51px;
+    height: 51px;
+    font-size: 1rem;
+  }
+  .card__submitButton {
+    margin-top: 0.5rem;
+  }
+  /* ------- CARD BACK ------- */
+  .card__back {
+    margin-top: 13px;
+    gap: 32px;
+  }
+  .card__image {
+    align-self: center;
+    max-height: 162px;
+  }
+  .card__score {
+    padding: 5px 19px;
+    line-height: 1.57;
+  }
+  .card__summaryTitle {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+  }
+  .card__summaryDescription {
+    padding: 0 4px;
+  }
+}
+
+/* ------- MEDIA END ------- */
+/* ------- FLIP ANIMATION ------- */
+.flip {
+  animation: flip 0.5s linear;
+  pointer-events: none;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flip {
+  49% {
+    opacity: 1;
+  }
+  50% {
+    transform: perspective(1000px) rotateY(90deg);
+    opacity: 0;
+  }
+  51% {
+    transform: perspective(1000px) rotateY(270deg);
+    opacity: 0;
+  }
+  52% {
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.card__front, .card__back {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL3Jlc2V0LnNjc3MiLCJzdHlsZS5jc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsIi4uL3Nhc3Mvc3R5bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxXQUFBO0FBU0EsU0FBQTtBQ1ZBOztDQ0lDO0FEREQ7RUFDRSxzQkFBc0I7QUNHeEI7O0FEREE7O0NDS0M7QURGRDtFQUNFLFNBQVM7QUNJWDs7QURGQTs7Q0NNQztBREhEO0VBQ0UsWUFBWTtBQ0tkOztBREhBOzs7O0NDU0M7QURKRDtFQUNFLGlCQUFpQjtFQUNqQixtQ0FBbUM7QUNNckM7O0FESkE7O0NDUUM7QURMRDtFQUNFLGNBQWM7RUFDZCxlQUFlO0FDT2pCOztBRExBOztDQ1NDO0FETkQ7RUFDRSxhQUFhO0FDUWY7O0FETkE7O0NDVUM7QURQRDtFQUNFLHlCQUF5QjtBQ1MzQjs7QURQQTs7Q0NXQztBRFJEO0VBQ0Usa0JBQWtCO0FDVXBCOztBRjNEQSxXQUFBO0FBU0EsU0FBQTtBR1JBO0VBQ0UsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixjSEYwQjtFR0cxQixtQ0hLaUM7RUdKakMsbUJIVXVCO0VHVHZCLGdCSEtjO0VHSGQsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7QUQ4RHJCOztBQzNEQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0FEOERyQjs7QUUzRUE7RUFDRSw4RUFBOEU7RUFDOUUsbUJBQW1CO0VBQ25CLGtDQUFrQztFQUNsQyxpQkFBaUI7RUFDakIsWUFBWTtBRjhFZDs7QUUzRUEsK0JBQUE7QUFFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsU0FBUztBRjZFWDs7QUUxRUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFNBQVM7QUY2RVg7O0FFaEZBO0VBTUksWUFBWTtFQUNaLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIseUJKekJ3QjtBRXVHNUI7O0FFdkZBO0VB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 */

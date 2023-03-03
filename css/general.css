@@ -1,0 +1,20 @@
+/* COLORS */
+/* TYPE */
+body {
+  padding: 1.5rem;
+  background-color: black;
+  color: #959eac;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsImdlbmVyYWwuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLFdBQUE7QUFTQSxTQUFBO0FDUkE7RUFDRSxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLGNERjBCO0VDRzFCLG1DREtpQztFQ0pqQyxtQkRVdUI7RUNUdkIsZ0JES2M7RUNIZCxhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQ0FyQjs7QURHQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0FDQXJCIiwiZmlsZSI6ImdlbmVyYWwuY3NzIn0= */
